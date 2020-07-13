@@ -18,7 +18,7 @@ realm-cli secrets add --app-id=appname-xxxxx --name=AtlasPublicKey --value=my-aw
 realm-cli secrets add --app-id=appname-xxxxx --name=GoogleOAuthClientSecret --value=my-google-oath-secret
 ```
 
-1. Download the Realm app code: `git clone https://github.com/JamesOsgood/atlas-reaper-stitch.git`
+1. Download the Realm app code: `git clone https://github.com/JamesOsgood/atlas-reaper-realm.git`
 1. Import the code and values into your Realm app: `realm-cli import --app-id=appname-xxxxx --strategy=replace --include-dependencies`
 1. Or set up auto deploy from git
 
