@@ -7,7 +7,7 @@ exports = async function() {
   const snapshot_ts = new Date(Date.now());
   const snapshot_id = snapshot_ts.toISOString();
 
-  const snapshot_type = confifg.snapshot_type;
+  const snapshot_type = config.snapshot_type;
 
   switch ( snapshot_type ) {
     case 'organisation':
