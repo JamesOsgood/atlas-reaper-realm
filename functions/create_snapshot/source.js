@@ -1,4 +1,4 @@
-exports = function() {
+exports = async function() {
 
   // Get config
   const mongodb = context.services.get("MasterAtlas");
