@@ -67,7 +67,7 @@ async function insert_project_details(snapshot_id, snapshot_ts, project, cluster
                   "configuration" : cluster};
 
         await clusterSnapshotsDetails.insertOne(clusterDoc);
-    };
+    }
 }
 
 async function insert_project_users(snapshot_id, project, clusterSnapshotsDetails)
