@@ -1,5 +1,5 @@
 {
-    "name": "create_snapshot_neur",
+    "name": "create_snapshot",
     "private": true,
     "can_evaluate": {}
 }
