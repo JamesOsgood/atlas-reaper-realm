@@ -7,15 +7,15 @@ exports = async function() {
   const snapshot_ts = new Date(Date.now());
   const snapshot_id = snapshot_ts.toISOString();
 
-  const snapshot_type = config.snapshot_type;
+  const snapshot_type = config['snapshot_type'];
 
   switch ( snapshot_type ) {
     case 'organisation':
-      await context.functions.execute('atlas_api_snapshot_clusters_for_org_id', snapshotConfig.org_id, snapshot_id, snapshot_ts);
+      await context.functions.execute('atlas_api_snapshot_clusters_for_org_id', snapshotConfig['org_id'], snapshot_id, snapshot_ts);
       break;
       
     case 'project':
-        await context.functions.execute('atlas_api_snapshot_clusters_for_project_id', snapshotConfig.project_id, snapshot_id, snapshot_ts);
+        await context.functions.execute('atlas_api_snapshot_clusters_for_project_id', snapshotConfig['project_id'], snapshot_id, snapshot_ts);
         break;
 
     default:
