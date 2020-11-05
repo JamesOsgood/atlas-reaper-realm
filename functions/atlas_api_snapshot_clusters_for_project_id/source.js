@@ -32,7 +32,7 @@ async function insert_project_users(snapshot_id, project, clusterSnapshotsDetail
       const role = user.roles[j];
       if ((role.groupId == project.id) && (role.roleName == "GROUP_OWNER") ) 
       {
-        var userDoc = { "userId" : user.id, "firstName" : user.firstName, "lastName" : user.lastName, "emailAddress" : user.emailAddress };
+        var userDoc = { "firstName" : user.firstName, "lastName" : user.lastName, "emailAddress" : user.emailAddress };
         await clusterSnapshotsDetails.updateMany({"snapshot_id" : snapshot_id, "project.id": project.id}, { $addToSet : {"users": userDoc}});
       }
     }
