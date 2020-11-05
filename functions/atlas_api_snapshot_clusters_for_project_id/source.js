@@ -44,11 +44,7 @@ exports = async function(project_id, snapshot_id, snapshot_ts)
     const mongodb = context.services.get("MasterAtlas");
     const clusterSnapshotsDetails = mongodb.db("atlas").collection("cluster_snapshot_details");
 
-    await context.functions.execute("atlas_api_get_clusters_for_project_id", project_id);
-    for ( var i = 0; i < resp.results.length; i++ )
-    { 
-      const project = resp.results[i];
-      await insert_project_details(snapshot_id, snapshot_ts, project, clusterSnapshotsDetails);
-      await insert_project_users(snapshot_id, project, clusterSnapshotsDetails);
-    }
+    var project = await context.functions.execute("atlas_api_get_project_by_id", project_id);
+    await insert_project_details(snapshot_id, snapshot_ts, project, clusterSnapshotsDetails);
+    await insert_project_users(snapshot_id, project, clusterSnapshotsDetails);
 }
